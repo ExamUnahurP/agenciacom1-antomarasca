@@ -1,6 +1,6 @@
 class Pack {
     method duracion()
-    method precio()
+    method precioBase()
     method beneficioEspecial()
     method coordinadorACargo()
 }    
@@ -40,10 +40,25 @@ class Coordinador {
 }
 
 object guia {}
+
 object asistenteLogistico {}
+
 object acompaniante {}
+
 object trasladosPrivados {
+    var property precio
+
     method tipo() = "Translados Privados"
+}
+
+object accesoASalasVIP {
+    var property precio
+    
+    method tipo() = "Acceso a salas VIP"
+}
+
+object segurosAdicionales {
+    method tipo() = "Seguros Adicionales"
 }
 
 
