@@ -1,4 +1,5 @@
 class Pack {
+    const precioBase()
     const beneficioEspecial = []
     
     method agregarBeneficio(beneficio) {
@@ -6,7 +7,6 @@ class Pack {
         }
     
     method duracion()
-    method precioBase()
     method valorFinal() {
         if (beneficio.estaVigente()) {
             return self.precioBase() + self.beneficioEspecial().precio()

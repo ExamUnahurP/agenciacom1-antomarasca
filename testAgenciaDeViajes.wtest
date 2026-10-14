@@ -3,7 +3,10 @@ import agenciaDeViajes.*
 describe "Test de la agencia"{
 
     test "Valor fianl de un pack" {
-        const viaje1 = new Nacional()
+        const viaje1 = new Nacional(precioBase = 300)
+
+        assert.equals(300, viaje1.valorFinal())
+        
     }
 
 
