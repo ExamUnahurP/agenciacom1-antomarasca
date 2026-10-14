@@ -2,6 +2,7 @@ class Pack {
     const precioBase()
     const beneficioEspecial = []
     
+    
     method agregarBeneficio(beneficio) {
             beneficioEspecial.add(beneficio)
         }
@@ -15,23 +16,26 @@ class Pack {
         }
     }
     method coordinadorACargo()
+    method esPremiun()
 }    
 
 class Nacional inherits Pack {
     const actividadesIncluidas = []
 
-    override method agregarActvidad(actividad) {
+    method agregarActvidad(actividad) {
         actividadesIncluidas.add(actividad)
     }
 
-    override method provinciaDeDestino()
+    method provinciaDeDestino()
+    override method esPremiun() = self.duracion() > 10
+    method cordinadorCalificado() {}
 }
 
 class Internacional inherits Pack {
-    override method paisDeDestino()
-    override method cantidadDeEscalas()
-    override method esLugarDeInteres()
-    override method valorFinal() = super() * 1.2
+    method paisDeDestino()
+    method cantidadDeEscalas()
+    method esLugarDeInteres()
+    method valorFinal() = super() * 1.2
 }
 
 class Coordinador {
