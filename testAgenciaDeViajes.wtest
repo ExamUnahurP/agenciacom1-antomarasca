@@ -20,6 +20,15 @@ describe "Test de la agencia"{
         assert.equals(360, viaje3.valorFinal())
     }
 
+    test "Determina si el cordi esta calificado" {
+        const cordi1 = new Coordinador (estaMotivado= true, aniosDeExperiencia=3, viajes=21)
+        cordi1.cambiarDeRol(Guia)
 
+        const cordi2 = new Coordinador (estaMotivado= true, aniosDeExperiencia=2)
+        cordi2.cambiarDeRol(AsistenteLogistico)
+
+        const cordi3 = new Coordinador (estaMotivado= true, aniosDeExperiencia=4)
+        cordi3.cambiarDeRol(Acompaniante)
+    }
 
 }
