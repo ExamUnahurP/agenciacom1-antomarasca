@@ -15,39 +15,39 @@ class Pack {
         }
     }
     method coordinadorACargo()
-    
 }    
 
 class Nacional inherits Pack {
     const actividadesIncluidas = []
 
-    method agregarActvidad(actividad) {
+    override method agregarActvidad(actividad) {
         actividadesIncluidas.add(actividad)
     }
 
-    method provinciaDeDestino()
+    override method provinciaDeDestino()
 }
 
 class Internacional inherits Pack {
-    method paisDeDestino()
-    method cantidadDeEscalas()
-    method esLugarDeInteres()
-    method valorFinal() = super() * 1.2
+    override method paisDeDestino()
+    override method cantidadDeEscalas()
+    override method esLugarDeInteres()
+    override method valorFinal() = super() * 1.2
 }
 
 class Coordinador {
     var rol = guia
+    var property viajes
 
     method cambiarDeRol(nuevoRol) {
         rol = nuevoRol
     }
     method rolDelGuia() {
-        if (rol == guia) {
-            return guia
-        } else if (rol == asistenteLogistico) {
-            return asistenteLogistico
-        } else if (rol == acompaniante) {
-            return acompaniante
+        if (rol == Guia) {
+            return Guia
+        } else if (rol == AsistenteLogistico) {
+            return AsistenteLogistico
+        } else if (rol == Acompaniante) {
+            return Acompaniante
         } else {
             self.error("No hay otro rol")
         }
@@ -55,13 +55,18 @@ class Coordinador {
     method cantidadDeViajesRealizados()
     method estaMotivado()
     method aniosDeExperiencia()
+    method altamenteCalificado() = viajes > 20 && rol.altamenteCalificado()
 }
 
-object guia {}
+class Guia {
+    override method altamenteCalificado() = super() && estaMotivado()
+}
 
-object asistenteLogistico {}
+class AsistenteLogistico {
+    method altamenteCalificado() 
+}
 
-object acompaniante {}
+class Acompaniante {}
 
 object trasladosPrivados {
     var property precio
