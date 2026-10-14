@@ -1,14 +1,29 @@
 class Pack {
+    const beneficioEspecial = []
+    
+    method agregarBeneficio(beneficio) {
+            beneficioEspecial.add(beneficio)
+        }
+    
     method duracion()
     method precioBase()
     method valorFinal() {
-        if (self.precioBase() + self.beneficioEspecial().precio()
-    method beneficioEspecial()
+        if (beneficio.estaVigente()) {
+            return self.precioBase() + self.beneficioEspecial().precio()
+        } else {
+            return self.precioBase()
+        }
+    }
     method coordinadorACargo()
+    
 }    
 
 class Nacional inherits Pack {
     const actividadesIncluidas = []
+
+    method agregarActvidad(actividad) {
+        actividadesIncluidas.add(actividad)
+    }
 
     method provinciaDeDestino()
 }
