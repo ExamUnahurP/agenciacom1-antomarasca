@@ -1,6 +1,8 @@
 class Pack {
     method duracion()
     method precioBase()
+    method valorFinal() {
+        if (self.precioBase() + self.beneficioEspecial().precio()
     method beneficioEspecial()
     method coordinadorACargo()
 }    
@@ -15,6 +17,7 @@ class Internacional inherits Pack {
     method paisDeDestino()
     method cantidadDeEscalas()
     method esLugarDeInteres()
+    method valorFinal() = super() * 1.2
 }
 
 class Coordinador {
@@ -49,18 +52,22 @@ object trasladosPrivados {
     var property precio
 
     method tipo() = "Translados Privados"
+    method estaVigente() =
 }
 
 object accesoASalasVIP {
     var property precio
-    
+
     method tipo() = "Acceso a salas VIP"
+    method estaVigente() 
 }
 
 object segurosAdicionales {
-    method tipo() = "Seguros Adicionales"
-}
+    var property precio
 
+    method tipo() = "Seguros Adicionales"
+    method estaVigente() 
+}
 
 
 
