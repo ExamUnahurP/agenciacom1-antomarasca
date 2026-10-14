@@ -28,10 +28,10 @@ class Coordinador {
             return guia
         } else if (rol == asistenteLogistico) {
             return asistenteLogistico
-        } else if (rol == acompañante) {
-            return acompañante
+        } else if (rol == acompaniante) {
+            return acompaniante
         } else {
-            
+            self.error("No hay otro rol")
         }
     }
     method cantidadDeViajesRealizados()
@@ -39,8 +39,12 @@ class Coordinador {
     method aniosDeExperiencia()
 }
 
-
-
+object guia {}
+object asistenteLogistico {}
+object acompaniante {}
+object trasladosPrivados {
+    method tipo() = "Translados Privados"
+}
 
 
 
