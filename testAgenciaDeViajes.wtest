@@ -5,8 +5,19 @@ describe "Test de la agencia"{
     test "Valor fianl de un pack" {
         const viaje1 = new Nacional(precioBase = 300)
 
-        assert.equals(300, viaje1.valorFinal())
+        const viaje2 = new Nacional (precioBase = 300)
+        trasladosPrivados.precio(100)
+        accesoASalasVIP.precio(150)
+
+        const viaje3 = new Internacional(precioBase = 300)
         
+
+        viaje2.agregarBeneficio(trasladosPrivados)
+        viaje2.agregarBeneficio(accesoASalasVIP)
+
+        assert.equals(300, viaje1.valorFinal())
+        assert.equals(550, viaje2.valorFinal())
+        assert.equals(360, viaje3.valorFinal())
     }
 
 
