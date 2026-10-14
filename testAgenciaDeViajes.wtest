@@ -1,6 +1,6 @@
 import agenciaDeViajes.*
 
-describe "Test de la agencia"{
+describe "Test de la agencia" {
 
     test "Valor fianl de un pack" {
         const viaje1 = new Nacional(precioBase = 300)
@@ -27,8 +27,12 @@ describe "Test de la agencia"{
         const cordi2 = new Coordinador (estaMotivado= true, aniosDeExperiencia=2)
         cordi2.cambiarDeRol(AsistenteLogistico)
 
-        const cordi3 = new Coordinador (estaMotivado= true, aniosDeExperiencia=4)
+        const cordi3 = new Coordinador (estaMotivado= true, aniosDeExperiencia=4, viajes=25)
         cordi3.cambiarDeRol(Acompaniante)
+
+        assert.that(cordi1.altamenteCalificado())
+        assert.notThat(cordi2.altamenteCalificado())
+        assert.that(cordi3.altamenteCalificado())
     }
 
 }

@@ -35,7 +35,7 @@ class Internacional inherits Pack {
 }
 
 class Coordinador {
-    var rol = guia
+    var rol = Guia
     var property viajes
     const property estaMotivado
     const property aniosDeExperiencia
@@ -54,40 +54,40 @@ class Coordinador {
             self.error("No hay otro rol")
         }
     }
-    method altamenteCalificado() = viajes > 20 && rol.altamenteCalificado()
+    method altamenteCalificado() = (viajes > 20) && (rol.calificado())
 }
 
 class Guia inherits Coordinador {
-    override method altamenteCalificado() = super() && estaMotivado
+    override method calificado() = super() && estaMotivado
 }
 
 class AsistenteLogistico inherits Coordinador {
-    override method altamenteCalificado() = super() && aniosDeExperiencia > 3
+    override method calificado() = super() && aniosDeExperiencia > 3
 }
 
 class Acompaniante inherits Coordinador {
-    override method altamenteCalificado() = super() && true
+    override method calificado() = super() && true
 }
 
 object trasladosPrivados {
     var property precio
 
     method tipo() = "Translados Privados"
-    method estaVigente() =
+    method estaVigente() {}
 }
 
 object accesoASalasVIP {
     var property precio
 
     method tipo() = "Acceso a salas VIP"
-    method estaVigente() 
+    method estaVigente() {}
 }
 
 object segurosAdicionales {
     var property precio
 
     method tipo() = "Seguros Adicionales"
-    method estaVigente() 
+    method estaVigente() {}
 }
 
 
